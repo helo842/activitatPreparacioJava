@@ -7,10 +7,10 @@ public class Caixa {
 
     public Caixa(String referencia, double pesKg, boolean prioritaria) {
         if (referencia == null || referencia.length() < 4) {
-            throw new IllegalArgumentException("La referència ha de tenir almenys 4 caràcters"); // [cite: 67, 69]
+            throw new IllegalArgumentException("La referència ha de tenir almenys 4 caràcters");
         }
         if (pesKg <= 0) {
-            throw new IllegalArgumentException("El pes ha de ser més gran que 0"); // [cite: 68, 69]
+            throw new IllegalArgumentException("El pes ha de ser més gran que 0");
         }
         this.referencia = referencia;
         this.pesKg = pesKg;
@@ -19,31 +19,31 @@ public class Caixa {
 
     public String getReferencia() {
         return referencia;
-    } // [cite: 70]
+    }
 
     public double getPesKg() {
         return pesKg;
-    } // [cite: 71]
+    }
 
     public boolean isPrioritaria() {
         return prioritaria;
-    } // [cite: 72]
+    }
 
     public double costEnviament() {
         double cost = 0;
         if (pesKg <= 2) {
-            cost = 4.0; // [cite: 75]
+            cost = 4.0;
         } else {
-            cost = 4.0 + (pesKg * 1.5); // [cite: 76]
+            cost = 4.0 + (pesKg * 1.5);
         }
         if (prioritaria) {
-            cost += 5.0; // [cite: 77]
+            cost += 5.0;
         }
         return cost;
     }
 
     @Override
     public String toString() {
-        return "[" + referencia + ": " + pesKg + "kg]"; // [cite: 78]
+        return "[" + referencia + ": " + pesKg + "kg]";
     }
 }

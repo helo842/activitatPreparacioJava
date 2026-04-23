@@ -10,15 +10,15 @@ public class ComandaUrgent extends Comanda {
 
     @Override
     public double calcularPes() {
-        double pesBase = 2.0; // [cite: 53]
+        double pesBase = 2.0;
         if (embalatgeEspecial) {
-            pesBase += 1.5; // [cite: 54]
+            pesBase += 1.5;
         }
-        return pesBase; // [cite: 55]
+        return pesBase;
     }
 
     @Override
     public String toString() {
-        return "[Urgent - " + codi + "]"; // [cite: 56]
+        return "[Urgent - " + codi + "]";
     }
 }

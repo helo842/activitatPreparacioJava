@@ -3,35 +3,35 @@ package com.example;
 import java.util.ArrayList;
 
 public class GestorComandes {
-    private ArrayList<Comanda> pendents; // [cite: 83]
+    private ArrayList<Comanda> pendents;
 
     public GestorComandes() {
-        this.pendents = new ArrayList<>(); // [cite: 85]
+        this.pendents = new ArrayList<>();
     }
 
     public void afegirComanda(Comanda c) {
-        this.pendents.add(c); // [cite: 86, 87]
+        this.pendents.add(c);
     }
 
     public Comanda extreurePrimera() {
         if (estaBuit())
-            return null; // [cite: 90]
-        return this.pendents.remove(0); // [cite: 88, 89]
+            return null;
+        return this.pendents.remove(0);
     }
 
     public boolean estaBuit() {
-        return this.pendents.isEmpty(); // [cite: 91, 92]
+        return this.pendents.isEmpty();
     }
 
     public int totalComandes() {
-        return this.pendents.size(); // [cite: 98]
+        return this.pendents.size();
     }
 
     public void mostrarComandes() {
-        System.out.println("== COMANDES PENDENTS: " + totalComandes() + " =="); // [cite: 101]
+        System.out.println("== COMANDES PENDENTS: " + totalComandes() + " ==");
         for (Comanda c : pendents) {
             System.out.print(c.toString() + " ");
         }
-        System.out.println(); // [cite: 102]
+        System.out.println();
     }
 }

@@ -1,18 +1,18 @@
 package com.example;
 
 public class Prestatgeria {
-    private Caixa[] espais; // [cite: 106]
+    private Caixa[] espais;
 
     public Prestatgeria(int numEspais) {
         if (numEspais < 1) {
-            throw new IllegalArgumentException("El número d'espais ha de ser >= 1"); // [cite: 110, 111]
+            throw new IllegalArgumentException("El número d'espais ha de ser >= 1");
         }
-        this.espais = new Caixa[numEspais]; // [cite: 109]
+        this.espais = new Caixa[numEspais];
     }
 
     public boolean guardarCaixa(Caixa c, int posicio) {
         if (posicio >= 0 && posicio < espais.length && espais[posicio] == null) {
-            espais[posicio] = c; // [cite: 113, 114]
+            espais[posicio] = c;
             return true;
         }
         return false;
@@ -20,23 +20,23 @@ public class Prestatgeria {
 
     public Caixa retirarCaixa(int posicio) {
         if (posicio >= 0 && posicio < espais.length && espais[posicio] != null) {
-            Caixa c = espais[posicio]; // [cite: 116]
+            Caixa c = espais[posicio];
             espais[posicio] = null;
             return c;
         }
-        return null; // [cite: 117]
+        return null;
     }
 
     public int primerEspaiLliure() {
         for (int i = 0; i < espais.length; i++) {
             if (espais[i] == null)
-                return i; // [cite: 119]
+                return i;
         }
-        return -1; // [cite: 120]
+        return -1;
     }
 
     public boolean hiHaEspai() {
-        return primerEspaiLliure() != -1; // [cite: 122]
+        return primerEspaiLliure() != -1;
     }
 
     public boolean estaBuida() {
@@ -44,7 +44,7 @@ public class Prestatgeria {
             if (c != null)
                 return false;
         }
-        return true; // [cite: 124]
+        return true;
     }
 
     public void mostrarPrestatgeria() {
@@ -55,6 +55,6 @@ public class Prestatgeria {
                 System.out.print(c.toString());
             }
         }
-        System.out.println(); // [cite: 126]
+        System.out.println();
     }
 }
